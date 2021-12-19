@@ -766,13 +766,13 @@
                   - IMAGE_URI="${REPOSITORY_URI}:${TAG}"
               build:
                 commands:
-                  - docker build --tag "$IMAGE_URI" .
+                  - docker build --tag "${IMAGE_URI}" .
                   - docker build --tag "${REPOSITORY_URI}:latest" .
               post_build:
                 commands:
                   - docker push "$IMAGE_URI"
                   - docker push "${REPOSITORY_URI}:latest"
-                  - printf '[{"name":"tezos-node","imageUri":"%s"}]' "$IMAGE_URI" > images.json
+                  - printf '[{"name":"tezos-node","imageUri":"%s"}]' "${IMAGE_URI}" > images.json
             artifacts:
               files: images.json
         Environment:
