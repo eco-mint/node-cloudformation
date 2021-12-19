@@ -11,7 +11,7 @@ Parameters:
 
   GitHubUser:
     Type: String
-    Default: tqtezos
+    Default: glcohen
     Description: Your team or username on GitHub.
 
   GitHubRepo:
@@ -21,7 +21,7 @@ Parameters:
 
   GitHubBranch:
     Type: String
-    Default: testnet
+    Default: main
     Description: The branch of the repo to continuously deploy.
 
   GitHubToken:
@@ -79,12 +79,14 @@ Parameters:
 
   Network:
     Type: String
-    Default: delphinet
+    Default: mainnet
     AllowedValues:
         - mainnet
-        - delphinet
-        - edo2net
-
+        - hangzhounet
+        - idiazabalnet
+        - dailynet
+        - mondaynet
+        
   Connections:
     Type: Number
     Default: 40

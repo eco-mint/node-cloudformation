@@ -11,7 +11,7 @@
   
     GitHubUser:
       Type: String
-      Default: tqtezos
+      Default: glcohen
       Description: Your team or username on GitHub.
   
     NodeGitHubRepo:
@@ -21,7 +21,7 @@
   
     NodeGitHubBranch:
       Type: String
-      Default: testnet
+      Default: main
       Description: The branch of the node repo to continuously deploy.
   
     GitHubToken:
@@ -83,11 +83,13 @@
   
     Network:
       Type: String
-      Default: delphinet
+      Default: mainnet
       AllowedValues:
         - mainnet
-        - delphinet
-        - edo2net
+        - hangzhounet
+        - idiazabalnet
+        - dailynet
+        - mondaynet
 
     Connections:
       Type: Number
