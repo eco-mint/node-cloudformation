@@ -3,7 +3,6 @@
   
   Description: >
     This template creates an automated continuous deployment pipeline to Amazon Elastic Container Service (ECS)
-    Created by Luke Youngblood, luke@blockscale.net
   
   Parameters:
   
@@ -11,7 +10,7 @@
   
     GitHubUser:
       Type: String
-      Default: glcohen
+      Default: eco-mint
       Description: Your team or username on GitHub.
   
     NodeGitHubRepo:
@@ -86,10 +85,11 @@
       Default: mainnet
       AllowedValues:
         - mainnet
-        - hangzhounet
-        - idiazabalnet
-        - dailynet
-        - mondaynet
+        # TODO (gabe) add these
+        # - hangzhounet
+        # - idiazabalnet
+        # - dailynet
+        # - mondaynet
 
     Connections:
       Type: Number
@@ -174,8 +174,6 @@
     RegionMap:
       eu-west-1:
         mainnet: mainnet-updater-chainbucket-vwnool266emk
-        delphinet: alphanet-updater-chainbucket-1v6go885nadpa
-        edo2net: zeronet-updater-chainbucket-kmmayerx0l8v
       eu-central-1:
         mainnet: mainnet-updater-snapshot-chainbucket-pq4rbmykvmc5
       ap-southeast-1:

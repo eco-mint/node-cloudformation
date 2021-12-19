@@ -3,7 +3,6 @@ AWSTemplateFormatVersion: 2010-09-09
 
 Description: >
   This template creates an automated continuous deployment pipeline to Amazon Elastic Container Service (ECS)
-  Created by Luke Youngblood, luke@blockscale.net
 
 Parameters:
 
@@ -11,7 +10,7 @@ Parameters:
 
   GitHubUser:
     Type: String
-    Default: glcohen
+    Default: eco-mint
     Description: Your team or username on GitHub.
 
   GitHubRepo:
@@ -82,10 +81,11 @@ Parameters:
     Default: mainnet
     AllowedValues:
         - mainnet
-        - hangzhounet
-        - idiazabalnet
-        - dailynet
-        - mondaynet
+        # TODO (gabe) - add these
+        # - hangzhounet
+        # - idiazabalnet
+        # - dailynet
+        # - mondaynet
         
   Connections:
     Type: Number
@@ -695,13 +695,13 @@ Resources:
                 - IMAGE_URI="${REPOSITORY_URI}:${TAG}"
             build:
               commands:
-                - docker build --tag "$IMAGE_URI" .
+                - docker build --tag "${IMAGE_URI}" .
                 - docker build --tag "${REPOSITORY_URI}:latest" .
             post_build:
               commands:
-                - docker push "$IMAGE_URI"
+                - docker push "${IMAGE_URI}"
                 - docker push "${REPOSITORY_URI}:latest"
-                - printf '[{"name":"tezos-updater","imageUri":"%s"}]' "$IMAGE_URI" > images.json
+                - printf '[{"name":"tezos-updater","imageUri":"%s"}]' "${IMAGE_URI}" > images.json
           artifacts:
             files: images.json
       Environment:

@@ -4,7 +4,6 @@ AWSTemplateFormatVersion: 2010-09-09
 
 Description: >
   This template creates a public subnet only VPC
-  Created by Luke Youngblood, luke@blockscale.net
 
 Parameters:
 
