@@ -181,7 +181,8 @@
       ap-northeast-1:
         mainnet: mainnet-updater-snapshot-chainbucket-sm0xec0cdesk
       us-west-2:
-        mainnet: mainnet-updater-chainbucket-1eq4z7ed2l45s
+        # (gabe) this is ours
+        mainnet: mainnet-updater-chainbucket-1vpakzng2fi9j
       us-east-2:
         mainnet: tezos-updater-oh-chainbucket-xq1wyfczcekl
   
