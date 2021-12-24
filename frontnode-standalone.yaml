@@ -605,7 +605,7 @@
         LaunchType: EC2
         DeploymentConfiguration:
           MaximumPercent: 133
-          MinimumHealthyPercent: 66
+          MinimumHealthyPercent: 40
         LoadBalancers: 
           - ContainerName: !Ref NodeTaskName
             ContainerPort: !Ref RpcPort
