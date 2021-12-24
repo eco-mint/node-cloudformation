@@ -45,7 +45,7 @@
   
     InstanceType:
       Type: String
-      Default: i3.xlarge
+      Default: i3en.xlarge
   
     KeyPair:
       Type: AWS::EC2::KeyPair::KeyName
