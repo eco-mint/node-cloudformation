@@ -81,11 +81,7 @@ Parameters:
     Default: mainnet
     AllowedValues:
         - mainnet
-        # TODO (gabe) - add these
-        # - hangzhounet
-        # - idiazabalnet
-        # - dailynet
-        # - mondaynet
+        - testnet
         
   Connections:
     Type: Number
