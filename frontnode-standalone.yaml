@@ -86,11 +86,6 @@
       AllowedValues:
         - mainnet
         - hangzhounet
-        # TODO (gabe) add these
-        # - hangzhounet
-        # - idiazabalnet
-        # - dailynet
-        # - mondaynet
 
     Connections:
       Type: Number
@@ -184,7 +179,7 @@
       us-west-2:
         # (gabe) these are ours
         mainnet: mainnet-updater-chainbucket-1vpakzng2fi9j
-        hangzhounet: testnet-updater-chainbucket-155ocgqfmw4cg
+        hangzhounet: testnet-updater-chainbucket-1mvjkehy14nmy
       us-east-2:
         mainnet: tezos-updater-oh-chainbucket-xq1wyfczcekl
   
