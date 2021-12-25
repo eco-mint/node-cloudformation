@@ -45,7 +45,7 @@
   
     InstanceType:
       Type: String
-      Default: i3en.xlarge
+      Default: i3.xlarge
   
     KeyPair:
       Type: AWS::EC2::KeyPair::KeyName
@@ -248,10 +248,6 @@
       Properties:
         ImageId: !Ref ECSAMI
         InstanceType: !Ref InstanceType
-        BlockDeviceMappings:
-            - DeviceName: "/dev/xvdcz"
-              Ebs: 
-                VolumeSize: 1000
         KeyName: !Ref KeyPair
         AssociatePublicIpAddress: True
 # Note: Uncomment the following line if you would prefer to use spot instances for your nodes
@@ -282,7 +278,6 @@
             # overwrite first few blocks in case there is a filesystem, otherwise mdadm will prompt for input
             for drive in $drives; do
               dd if=/dev/zero of=$drive bs=4096 count=1024
-              mdadm --stop $drive
             done
   
             partprobe
@@ -605,7 +600,7 @@
       Properties:
         Cluster: !Ref Cluster
         DesiredCount: !Ref NodeDesiredCount
-        HealthCheckGracePeriodSeconds: 3600
+        HealthCheckGracePeriodSeconds: 6000
         TaskDefinition: !Ref NodeTaskDefinition
         LaunchType: EC2
         DeploymentConfiguration:
