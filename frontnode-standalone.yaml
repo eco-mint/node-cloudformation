@@ -281,6 +281,9 @@
             done
   
             partprobe
+            mdadm -Esv
+            mdadm  --stop /dev/md*
+            mdadm --misc --scan --detail /dev/md0
             mdadm --create --force --verbose /dev/md0 --level=0 -c256 --raid-devices=$ephemeral_count $drives
             echo DEVICE $drives | tee /etc/mdadm.conf
             mdadm --detail --scan | tee -a /etc/mdadm.conf
