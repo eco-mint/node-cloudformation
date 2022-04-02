@@ -81,7 +81,7 @@ Parameters:
     Default: mainnet
     AllowedValues:
         - mainnet
-        - hangzhounet
+        - ithacanet
         
   Connections:
     Type: Number
